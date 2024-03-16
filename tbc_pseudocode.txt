@@ -1,0 +1,114 @@
+Combat pseudocode 
+
+Import the ian_tbc file
+
+Def main
+	the hero’s variable with tbc file ian_tbc.Character()
+	Hero’s name = “Grand Hero”
+	Hero’s hitpoint = 10
+	Hero’s hit chance = 60%
+	Hero’s maximum damage = 5
+	Hero’s armor of 2
+	A high hit chance and good damage at the cost of some hp
+
+	monster’s variable form the ian_tbc file with default name and stats
+	Monster’s name “The terrible Monster”
+	Hitpoints of 15
+	Hitchance of 30
+	Max damage of 2
+	Armor of 1
+	A tank with a lot of health but not much else
+	
+	keepGoing = True
+	While keepGoing is True:
+		hitChance with parameters hero and monster, called in ian_tbc
+		hitChance with parameters monster and hero, called in ian_tbc
+		Input “Press enter to continue” so that the fight does not run constantly
+		If monster’s hitpoints reach 0 or lower:
+			Print to tell the user the monster has died
+			End the loop with keepGoing = False
+		Elif the hero’s health is 0 or lower:
+			Print to tell the user the hero has died
+			End the loop with keepGoing = False
+If name == “__main__”: (ie initialize the main function for variable name)
+	main()
+	
+
+
+ Ian_tbc pseudocode
+
+Import random
+Create class Character(with object as the parameter)
+	Definite initilizer with the 5 default stats for the two characters, including name, as self to alow for stats modification:
+		Initialize with super().__init__()
+		self.name = name (to assign a variable to use and alter the called characters stats)
+		Repeat this above line for stats/names hitpoints, hitChance, maxDamage, and armor
+		@property to retrieve self.__name’s value, similarly with other properties
+		Def name with parameter self:
+			Self.__name = value
+		 @name.setter, to set the name to allow values to be applied to it, similar to other settes
+    		def name(self,value):
+       			 self.__name = value
+    		@property
+    		def hitpoints(self):
+      			  return self.__hitpoints
+   		 @hitpoints.setter
+    		def hitpoints(self,value):
+       			 self.__hitpoints = value
+		Def testInt with self, value, and minimum of 0, max 100, and default of 0 to avoid values existing outside of the range possible for functioning code
+			Variable Out = default (so 0)
+			If value is an integer:
+				If value >= the minimum:
+					If value <= max:
+						Out = value (accepting it as a value within desired range)
+					Else:
+						Print too large
+				Else:
+					print(“too small”)
+			Else:
+				Print “must be an int”
+			Return out to display acceptable value
+		Define printStats(self):
+			print(f"""
+	{self.name}
+  	  Hit points: {self.hitpoints}
+   	 Hit Chance: {self.hitChance}
+   	 Max Damage: {self.maxDamage}
+   	 Armor: {self.armor}
+      	        """)
+	define hitChance with parameter self and monster:
+		playerHit = and random int from 1 to 100
+		if player hit interger <= characters hitChance:
+			print who is attacking who
+			calculate a damge number with between 0 and max damage
+			subtract armor from damage
+			if final damge is less than 0:
+				revert it to 0 so no negatives
+			if monsert armor is greater than 0:
+				print the armor value to show how much reflected
+			print final damage done
+			subtracter final damage from monster being attacked hitpoints
+			print ht eattacked monsters health
+		else:
+			print statement telling attacker missed monster
+def main with parameters hero and monster:
+	hero = Character()
+       hero.name =  "George bob"
+       monster = Character()
+       monster.name = "Monster"	
+	 hero.printStats()
+       monster.printStats()
+       hitChance(hero,monster), calling the function with the hero attacking
+       hitChance(monster,hero), calling the functon with the monster attacking
+
+if __name__ == "__main__": (setting parameters for main)
+	main("hero","monster")
+
+	
+		
+		
+
+			
+
+		
+		

@@ -19,14 +19,14 @@ class Character(object):
         return self.__name
     @name.setter
     def name(self,value):
-        self.__name = value
+       	self.__name = value
     @property
     def hitpoints(self):
-        return self.__hitpoints
+         return self.__hitpoints
     @hitpoints.setter
     def hitpoints(self,value):
-        #value = self.testint(value,0,1000,0)
-        self.__hitpoints = value
+       	self.__hitpoints = value
+
     def testInt(self, value, min = 0, max = 100, default = 0):
         """ takes in value 
             checks to see if it is an int between
@@ -60,18 +60,18 @@ class Character(object):
 def hitChance(self, monster):
     playerHit = random.randint(0, 100)
     #print("help")
-    if int(playerHit) <= 30:
+    if int(playerHit) <= self.hitChance:
         print(f"{self.name}'s battle hammer makes contact with {monster.name} ...")
         playerDam = random.randint(0, self.maxDamage)
-        finalDam = int(playerDam) - int(self.armor)
+        finalDam = int(playerDam) - int(monster.armor)
         if int(finalDam) < 0:
             finalDam = 0
-        print(f"{finalDam}")
         if monster.armor > 0:
             print(f"but {monster.name}'s armor deflects {monster.armor} points of damage")
         print(f"for {finalDam} points of damage")
         #print(finalDam)
         monster.hitpoints -= int(finalDam)
+        print(f"{monster.name} has {monster.hitpoints} health \n") 
         #print(f"{finalDam} final dam")
         #rint({"monster.hitpoints"})
     else:
@@ -79,6 +79,7 @@ def hitChance(self, monster):
 
         
     # need to check if damage s positive, so I can end if they die
+
 def main(hero,monster):
         
        hero = Character()
@@ -91,7 +92,7 @@ def main(hero,monster):
        monster.printStats()
        hitChance(hero,monster)
        hitChance(monster,hero)
-   
+
 if __name__ == "__main__":
        main("hero","monster")
        
